@@ -1,11 +1,12 @@
 package com.skillbox.github.ui.starred_list
 
-import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.skillbox.github.network.Repositories
+import kotlinx.coroutines.launch
 
 class StarredListViewModel: ViewModel() {
 
@@ -24,16 +25,15 @@ class StarredListViewModel: ViewModel() {
     }
 
     fun getStarredRepositories() {
-        repository.getStarredRepositories(
-            onComplete = { repositories ->
-                isStarredLoading.value = false
-                Log.e("tags", "onComplete starred repo $repositories")
+        viewModelScope.launch {
+            try {
+                val repositories = repository.getStarredRepositories()
                 updateRepositories(starredRepositoriesList, repositories)
-            },
-            onError = {
-                isStarredLoading.value = false
+            } catch (t: Throwable) {
                 starredRepositoriesList.clear()
+            } finally {
+                isStarredLoading.value = false
             }
-        )
+        }
     }
 }

@@ -39,9 +39,9 @@ interface GitHubApi {
     ): Response<Unit>
 
     @GET("user/starred")
-    fun getStarred(
+    suspend fun getStarred(
         @Header("Authorization") token: String
-    ): Call<List<Repositories>>
+    ): List<Repositories>
 
     @PATCH("user")
     suspend fun patchName(
