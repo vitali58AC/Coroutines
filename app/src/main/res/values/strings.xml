@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Github Coroutines</string>
+    <string name="main_profile">Профиль</string>
+    <string name="main_repositories">Список репозиториев</string>
+    <string name="auth_login">Войти</string>
+    <string name="auth_canceled">Аутентификация не выполнена</string>
+    <string name="auth_canceled_exception">Аутентификация не выполнена: %1$s</string>
+    <string name="user_logo">User logo image</string>
+    <string name="id">Id:</string>
+    <string name="name">Name:</string>
+    <string name="full_name">Full name:</string>
+    <string name="url">URL:</string>
+    <string name="type">Type:</string>
+    <string name="company">Company:</string>
+    <string name="location">Location:</string>
+    <string name="public_repos">Public repos:</string>
+    <string name="followers">Followers:</string>
+    <string name="following">Following:</string>
+    <string name="created_at">Created at:</string>
+    <string name="updated_at">Updated at:</string>
+    <string name="list_repositories">List of repositories</string>
+    <string name="list_starred_repositories">List of starred repositories</string>
+    <string name="owner">Owner:</string>
+    <string name="login">Login:</string>
+    <string name="description">Description</string>
+    <string name="starred_repo_list">Список репозиториев со звездой</string>
+</resources>
